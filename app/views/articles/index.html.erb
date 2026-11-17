@@ -1,0 +1,13 @@
+<h1 class="text-center mb-5">My articles</h1>
+
+<div>
+  <% @articles.each do |article| %>
+    <%= link_to article_path(article), class: "list-group-item list-group-item-action mb-4 border-bottom" do %>
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><%= article.title %></h5>
+        <small><%= article.created_at.strftime("%d %B %Y • %H:%M") %></small>
+      </div>
+      <p class="mb-1"><%= truncate(article.content, length: 80, omission: "...") %></p>
+    <% end %>
+  <% end %>
+</div>

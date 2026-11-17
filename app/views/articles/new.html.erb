@@ -1,0 +1,16 @@
+<%= link_to articles_path, class: "d-flex gap-3 align-items-center mb-3 link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" do %>
+    <i class="fa-solid fa-arrow-left"></i>
+    <p class="m-0">Go back</p>
+<% end %>
+
+<%= form_with model: @article do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :content, class: "form-label" %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+  <%= f.submit "Save article", class: "btn btn-outline-success" %>
+<% end %>
